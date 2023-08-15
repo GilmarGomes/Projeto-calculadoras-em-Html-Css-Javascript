@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Site</title>
+    <link rel="stylesheet" href="./assets/reset.css" />
+    <link rel="stylesheet" href="./assets/style.css" />
+  </head>
+  <body>
+    <header class="header">
+      <nav class="menu">
+        <ul>
+          <li onclick="toggleContainerDisplay()" id="Calculate">Calculadora</li>
+          <li onclick="toggleContainerDisplay2()" id="calculate-media">
+            Calculadora de média
+          </li>
+          <li onclick="toggleContainerDisplay3()" id="calculate-imc">
+            Calculadora Imc
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <section class="container" id="Calculate-ope">
+        <div class="Calculate-container">
+          <h2>Calculadora</h2>
+          <p>
+            <input
+              placeholder="0"
+              type="text"
+              name="display"
+              id="display"
+              readonly
+            />
+          </p>
+          <button type="button" onclick="addDisplay('1')">1</button>
+          <button type="button" onclick="addDisplay('2')">2</button>
+          <button type="button" onclick="addDisplay('3')">3</button>
+          <button type="button" onclick="addDisplay('+')">+</button><br />
+          <button type="button" onclick="addDisplay('4')">4</button>
+          <button type="button" onclick="addDisplay('5')">5</button>
+          <button type="button" onclick="addDisplay('6')">6</button>
+          <button type="button" onclick="addDisplay('-')">-</button><br />
+          <button type="button" onclick="addDisplay('7')">7</button>
+          <button type="button" onclick="addDisplay('8')">8</button>
+          <button type="button" onclick="addDisplay('9')">9</button>
+          <button type="button" onclick="addDisplay('*')">*</button>
+          <br />
+          <button type="button" onclick="addDisplay('0')">0</button>
+          <button type="button" onclick="addDisplay('/')">/</button>
+          <button type="button" onclick="clean()">C</button>
+          <button type="button" onclick="sumOpe('=')">=</button><br />
+        </div>
+      </section>
+      <section class="container" id="Calculate-ope2">
+        <div class="container-media">
+          <h2>Calculadora de média</h2>
+          <form action="">
+            <label for="nota1">Digite sua primeira nota:</label><br />
+            <input placeholder="0" type="number" name="nota1" id="nota1" />
+            <label for="nota2">Digite sua segunda nota:</label><br />
+            <input placeholder="0" type="number" name="nota2" id="nota2" />
+            <button id="button" type="button" onclick="calculate()">
+              Calcular Média
+            </button>
+          </form>
+          <div id="result2">Calculando media...</div>
+        </div>
+      </section>
+      <section class="container" id="Calculate-ope3">
+        <div id="container-imc">
+          <h2>Calculadora de IMC</h2>
+          <label for="weight">Peso (kg):</label>
+          <input
+            placeholder="0"
+            type="number"
+            id="weight"
+            required
+          /><br /><br />
+          <label for="height">Altura (m):</label>
+          <input
+            placeholder="0"
+            type="number"
+            id="height"
+            required
+          /><br /><br />
+          <button onclick="calculateIMC()">Calcular IMC</button>
+          <p id="result"></p>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <p>&copy; 2023 Gilmar Gomes. Todos os direitos reservados.</p>
+    </footer>
+    <script src="./assets/script.js"></script>
+  </body>
+</html>
